@@ -7,9 +7,9 @@ import random
 
 THREADS = 500
 logo = '''
-   ~ Telegram Auto Views V2 ~
-     ~ github.com/TeaByte ~
-          ~ @TeaByte ~
+   ~ Telegram views bot ~
+     ~ github.com/h4shell ~
+          ~ @h4shell ~
 '''
 
 
