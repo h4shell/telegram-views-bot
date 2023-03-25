@@ -12,7 +12,8 @@ logo = '''
           ~ @TeaByte ~
 '''
 
-channel, post = input_loader("https://t.me/OfferteAmazon2025/193")
+
+channel, post = input_loader("https://t.me/OfferteAmazon2025/207")
 
 print(logo)
 
@@ -20,7 +21,7 @@ print(logo)
 def start(num):
 
     event = Event()
-
+    vv = random.randint(100, 150)
     http, socks4, socks5 = auto_loader()
 
     auto = Proxy(http_sources=http, socks4_sources=socks4,
@@ -38,7 +39,7 @@ def start(num):
         threads.append(thread)
         thread.start()
         try:
-            if int(api.real_views) > random.randint(800, 999):
+            if int(api.real_views) > vv:
                 event.set()
                 break
         except:
