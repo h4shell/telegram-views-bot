@@ -13,7 +13,7 @@ logo = '''
 '''
 
 
-channel, post = input_loader("https://t.me/OfferteAmazon2025/207")
+channel, post = input_loader("")
 
 print(logo)
 
@@ -21,14 +21,14 @@ print(logo)
 def start(num):
 
     event = Event()
-    vv = random.randint(100, 150)
+    vv = random.randint(800, 999)
     http, socks4, socks5 = auto_loader()
 
     auto = Proxy(http_sources=http, socks4_sources=socks4,
                  socks5_sources=socks5)
     api = Api(channel, post=num)
-    views = Thread(target=api.views, args=(event,)).start()
-    tui = Thread(target=api.tui, args=(event, logo, THREADS)).start()
+    Thread(target=api.views, args=(event,)).start()
+    Thread(target=api.tui, args=(event, logo, THREADS)).start()
 
     threads = []
     auto.init()
@@ -39,7 +39,7 @@ def start(num):
         threads.append(thread)
         thread.start()
         try:
-            if int(api.real_views) > vv:
+            if int(api.real_views) > vv or (int(api.real_views) == 0):
                 event.set()
                 break
         except:
@@ -49,9 +49,6 @@ def start(num):
     for t in threads:
         t.join()
         num = str(int(num) + 1)
-
-        # views = Thread(target=api.views, args=(event,)).start()
-        # tui = Thread(target=api.tui, args=(event, logo, THREADS)).start()
         start(num)
 
 
