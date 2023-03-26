@@ -39,7 +39,7 @@ def start(num):
         threads.append(thread)
         thread.start()
         try:
-            if int(api.real_views) > vv or (int(api.real_views) == 0):
+            if int(api.real_views) > vv:
                 event.set()
                 break
         except:
