@@ -13,7 +13,7 @@ logo = '''
 '''
 
 
-channel, post = input_loader("")
+channel, post = input_loader("https://t.me/OfferteAmazon2025/311")
 
 print(logo)
 
